@@ -1,0 +1,25 @@
+.navbar img {
+  height: 35px;
+}
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid gray;
+  display: flex;
+}
+.navbar-links {
+  margin: 0;
+  padding: 0;
+}
+.navbar-links-item {
+  padding: 5px;
+  list-style-type: none;
+  text-align: center;
+}
+.navbar-links-item li {
+  display: inline-block;
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 10px;
+  font-size: 9px;
+  list-style-type: none;
+}
