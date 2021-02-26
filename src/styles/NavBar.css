@@ -11,7 +11,7 @@
   padding: 0;
 }
 .navbar-links-item {
-  padding: 5px;
+  padding: 7px;
   list-style-type: none;
   text-align: center;
 }
@@ -22,4 +22,8 @@
   padding-right: 10px;
   font-size: 9px;
   list-style-type: none;
+}
+@media only screen and (max-width: 750px) {
+  
+    
 }

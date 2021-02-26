@@ -26,7 +26,7 @@ const AddProperty = () => {
 
   return (
     <div className="addproperty">
-      <h1>Add Property:</h1>
+      <h2>Add Property:</h2>
       <form onSubmit={handleAddProperty}>
         <label htmlFor="title">
           <input

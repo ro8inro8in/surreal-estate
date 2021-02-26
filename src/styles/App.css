@@ -1,10 +1,10 @@
 body {
 
-  background-color: #ae67ffe3;
+  background-color: #f9f2ff;
   margin: 0;
   padding: 0;
-  background: #fff;
-  color: #595963;
+  /* background: #fff; */
+  color: #454552;
   font: 78%/130% arial,helvetica,sans-serif;
   margin: 0;
   text-align: center;
@@ -13,8 +13,14 @@ body {
   overflow-anchor: none;
 }
 
-h2 {
+h1 {
   display: flex;
   justify-content: center;
+  margin: 4%;
+  font-size: 30px;
 }
 
+@media only screen and (max-width: 750px) {
+  
+    
+}
