@@ -8,8 +8,8 @@ const AddProperty = () => {
       type: "",
       bathrooms: "",
       bedroom: "",
-      email: "Please Enter Email",
-      price: "Name your price",
+      email: "",
+      price: "",
     },
   };
   const [fields, setFields] = useState(initialState.fields);
@@ -30,6 +30,7 @@ const AddProperty = () => {
         <label htmlFor="title">
           Title:
           <input
+            placeholder="House/Flat/Bungalow"
             id="title"
             name="title"
             value={fields.title}
@@ -38,6 +39,7 @@ const AddProperty = () => {
         </label>
         <label htmlFor="city">
           <select
+            placeholder="City/Town"
             id="city"
             name="city"
             value={fields.city}
@@ -51,6 +53,7 @@ const AddProperty = () => {
         </label>
         <label htmlFor="type">
           <select
+            placeholder="Type of property"
             id="type"
             name="type"
             value={fields.type}
@@ -67,6 +70,7 @@ const AddProperty = () => {
         </label>
         <label htmlFor="bathroom">
           <select
+            placeholder="Number of bathrooms"
             id="bathroom"
             name="bathroom"
             value={fields.bathroom}
@@ -80,22 +84,24 @@ const AddProperty = () => {
         </label>
         <label htmlFor="bathroom">
           <select
-            id="bedroom"
-            name="bedroom"
+            placeholder="Number of bedrooms"
+            id="bedrooms"
+            name="bedrooms"
             value={fields.bedroom}
             onChange={handleFieldChange}
           >
-            <option value="1 Bedroom">1 Bedroom</option>
-            <option value="2 Bedroom">2 Bedroom</option>
-            <option value="3 Bedroom">3 Bedroom</option>
-            <option value="4 Bedroom">4 Bedroom</option>
-            <option value="5 Bedroom">5 Bedroom</option>
-            <option value="6 Bedroom">6 Bedroom</option>
+            <option value="1 Bedrooms">1 Bedroom</option>
+            <option value="2 Bedrooms">2 Bedrooms</option>
+            <option value="3 Bedrooms">3 Bedrooms</option>
+            <option value="4 Bedrooms">4 Bedrooms</option>
+            <option value="5 Bedrooms">5 Bedrooms</option>
+            <option value="6 Bedrooms">6 Bedrooms</option>
           </select>
         </label>
         <label htmlFor="email">
           Email:
           <input
+            placeholder="janedoe@gmail.com"
             id="email"
             name="email"
             value={fields.email}
@@ -105,6 +111,7 @@ const AddProperty = () => {
         <label htmlFor="price">
           price:
           <input
+            placeholder="£10000"
             id="price"
             name="price"
             value={fields.price}
