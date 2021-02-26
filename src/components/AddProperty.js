@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/AddProperty.css";
 
 const AddProperty = () => {
   const initialState = {
@@ -24,13 +25,12 @@ const AddProperty = () => {
   };
 
   return (
-    <div className="AddProperty">
-      Add Property:
+    <div className="addproperty">
+      <h1>Add Property:</h1>
       <form onSubmit={handleAddProperty}>
         <label htmlFor="title">
-          Title:
           <input
-            placeholder="House/Flat/Bungalow"
+            placeholder="search"
             id="title"
             name="title"
             value={fields.title}
@@ -99,9 +99,8 @@ const AddProperty = () => {
           </select>
         </label>
         <label htmlFor="email">
-          Email:
           <input
-            placeholder="janedoe@gmail.com"
+            placeholder="email"
             id="email"
             name="email"
             value={fields.email}
@@ -109,9 +108,8 @@ const AddProperty = () => {
           />
         </label>
         <label htmlFor="price">
-          price:
           <input
-            placeholder="£10000"
+            placeholder="price"
             id="price"
             name="price"
             value={fields.price}

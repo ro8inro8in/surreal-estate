@@ -9,8 +9,8 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
-      <h2>Welcome to Surreal Estate</h2>
-      <div className="Navlinks">
+      <h1>Welcome to Surreal Estate</h1>
+      <div className="navlinks">
         <Switch>
           <Route exact path="/">
             <Properties />

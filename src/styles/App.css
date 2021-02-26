@@ -1,7 +1,16 @@
 body {
-  background-color: #eeeeeee3;
+
+  background-color: #ae67ffe3;
   margin: 0;
   padding: 0;
+  background: #fff;
+  color: #595963;
+  font: 78%/130% arial,helvetica,sans-serif;
+  margin: 0;
+  text-align: center;
+  overflow-anchor: none;
+  box-sizing: border-box;
+  overflow-anchor: none;
 }
 
 h2 {
@@ -9,7 +18,3 @@ h2 {
   justify-content: center;
 }
 
-.navlinks {
-  display: flex;
-  justify-content: center;
-}
