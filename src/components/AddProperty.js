@@ -6,6 +6,10 @@ const AddProperty = () => {
       title: "",
       city: "Manchester",
       type: "",
+      bathrooms: "",
+      bedroom: "",
+      email: "Please Enter Email",
+      price: "Name your price",
     },
   };
   const [fields, setFields] = useState(initialState.fields);
@@ -24,7 +28,7 @@ const AddProperty = () => {
       Add Property:
       <form onSubmit={handleAddProperty}>
         <label htmlFor="title">
-          title
+          Title:
           <input
             id="title"
             name="title"
@@ -45,7 +49,7 @@ const AddProperty = () => {
             <option value="Liverpool">Liverpool</option>
           </select>
         </label>
-        <label htmlFor="Type">
+        <label htmlFor="type">
           <select
             id="type"
             name="type"
@@ -60,6 +64,52 @@ const AddProperty = () => {
             <option value="Cottage">Cottage</option>
             <option value="Bungalow">Bungalow</option>
           </select>
+        </label>
+        <label htmlFor="bathroom">
+          <select
+            id="bathroom"
+            name="bathroom"
+            value={fields.bathroom}
+            onChange={handleFieldChange}
+          >
+            <option value="1 Bathroom">1 Bathroom</option>
+            <option value="2 Bathroom">2 Bathroom</option>
+            <option value="3 Bathroom">3 Bathroom</option>
+            <option value="4 Bathroom">4 Bathroom</option>
+          </select>
+        </label>
+        <label htmlFor="bathroom">
+          <select
+            id="bedroom"
+            name="bedroom"
+            value={fields.bedroom}
+            onChange={handleFieldChange}
+          >
+            <option value="1 Bedroom">1 Bedroom</option>
+            <option value="2 Bedroom">2 Bedroom</option>
+            <option value="3 Bedroom">3 Bedroom</option>
+            <option value="4 Bedroom">4 Bedroom</option>
+            <option value="5 Bedroom">5 Bedroom</option>
+            <option value="6 Bedroom">6 Bedroom</option>
+          </select>
+        </label>
+        <label htmlFor="email">
+          Email:
+          <input
+            id="email"
+            name="email"
+            value={fields.email}
+            onChange={handleFieldChange}
+          />
+        </label>
+        <label htmlFor="price">
+          price:
+          <input
+            id="price"
+            name="price"
+            value={fields.price}
+            onChange={handleFieldChange}
+          />
         </label>
         <button type="submit">Add</button>
       </form>
