@@ -1,6 +1,6 @@
 body {
 
-  background-color: #f9f2ff;
+  background-color: #f5e9ff;
   margin: 0;
   padding: 0;
   /* background: #fff; */
@@ -19,6 +19,7 @@ h1 {
   margin: 4%;
   font-size: 30px;
 }
+
 
 @media only screen and (max-width: 750px) {
   
