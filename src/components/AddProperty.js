@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/AddProperty.css";
 import axios from "axios";
+import Alert from "./Alert";
 
 const AddProperty = () => {
   const initialState = {
@@ -13,21 +14,34 @@ const AddProperty = () => {
       email: "",
       price: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
+
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
-
-    // const property = {
-
-    // };
+    setAlert({ message: "", isSuccess: false });
     axios
       .post(`http://localhost:4000/api/v1/PropertyListing`, fields)
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-      });
+      .then((response) => {
+        console.log(response);
+        console.log(response.data);
+        setAlert({
+          message: "Property Added",
+          isSuccess: true,
+        });
+      })
+      .catch(() =>
+        setAlert({
+          message: "Server error. Please try again later.",
+          isSuccess: false,
+        })
+      );
   };
 
   const handleFieldChange = (event) => {
@@ -37,6 +51,7 @@ const AddProperty = () => {
   return (
     <div className="addproperty">
       <h2>Add Property:</h2>
+      <Alert message={alert.message} success={alert.isSuccess} />;
       <form onSubmit={handleAddProperty}>
         <label htmlFor="title">
           <input
@@ -133,5 +148,3 @@ const AddProperty = () => {
 };
 
 export default AddProperty;
-
-// up to step 6 on the forms walkthrough

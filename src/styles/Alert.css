@@ -1,15 +1,28 @@
 .alert-error {
-    padding: 20px;
-    background-color: #f44336; 
-    color: rgb(240, 233, 233);
-    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    margin: 5%;
+    background-color: rgb(255, 16, 16);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
+    box-sizing: border-box;
+    font-size: 12px;
+    
   }
 
   .alert-success {
-    padding: 20px;
-    background-color: #55ec55; 
-    color: rgb(17, 17, 17);
-    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    margin: 5%;
+    background-color: rgba(131, 0, 131, 0.753);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
+    box-sizing: border-box;
+    font-size: 12px;
   }
 
 
