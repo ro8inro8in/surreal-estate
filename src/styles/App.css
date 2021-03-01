@@ -1,6 +1,6 @@
 body {
 
-  background-color: #f5e9ff;
+  background-color: #f4ecfc;
   margin: 0;
   padding: 0;
   /* background: #fff; */
@@ -19,7 +19,13 @@ h1 {
   margin: 4%;
   font-size: 30px;
 }
-
+/* .hero-back-img { 
+  height: 10%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+} */
 
 @media only screen and (max-width: 750px) {
   

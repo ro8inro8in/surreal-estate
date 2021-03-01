@@ -1,7 +1,7 @@
 .navlinks {
   display: flex;
   justify-items: start;
-  background-color: #f5f5f5de;
+  background-color: #f5f5f5ef;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
   box-sizing: border-box;
@@ -40,6 +40,8 @@
   justify-content: center;
   padding: 5%;
   margin: 5%;
+  background-color: rgba(131, 0, 131, 0.753);
+  color: white;
 }
 
 @media only screen and (max-width: 1000px) {

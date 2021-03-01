@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
+import "./Alert";
 
 const App = () => {
   return (

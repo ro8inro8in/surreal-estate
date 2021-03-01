@@ -1,0 +1,15 @@
+.alert-error {
+    padding: 20px;
+    background-color: #f44336; 
+    color: rgb(240, 233, 233);
+    margin-bottom: 15px;
+  }
+
+  .alert-success {
+    padding: 20px;
+    background-color: #55ec55; 
+    color: rgb(17, 17, 17);
+    margin-bottom: 15px;
+  }
+
+
