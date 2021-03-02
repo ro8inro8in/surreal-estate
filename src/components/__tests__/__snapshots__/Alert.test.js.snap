@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not render an error or a success message if message props is empty 1`] = `
+<DocumentFragment>
+  <div
+    class="Alert alert-error"
+  >
+    Error!
+  </div>
+</DocumentFragment>
+`;
+
+exports[`does not render an error or a success message if message props is empty 2`] = `
+<DocumentFragment>
+  <div
+    class="Alert alert-error"
+  >
+    Error!
+  </div>
+</DocumentFragment>
+`;
+
+exports[`does not render an error or a success message if message props is empty: Error! 1`] = `
+<div
+  class="Alert alert-error"
+>
+  Error!
+</div>
+`;
