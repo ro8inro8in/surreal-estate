@@ -1,37 +1,33 @@
 import React from "react";
+import "../styles/PropertyCard.css";
 import PropTypes from "prop-types";
-
+import { FaBed, FaBath, FaPoundSign, FaMailBulk } from "react-icons/fa";
 
 const PropertyCard = (props) => {
   const { bathrooms, bedrooms, city, email, price, title, type } = props;
   return (
-    <div className="PropertyCard">
-      <div className="bathrooms">
-        bathrooms:
-        {bathrooms.max}
+    <div className="property-card">
+      <div className="property-card-bathrooms">
+        <FaBath /> 2<span>{bathrooms.max}</span>
       </div>
-      <div className="bedrooms">
-        bedrooms:
-        {bedrooms.max}
+      <div className="property-card-bedrooms">
+        <FaBed /> 2<span>{bedrooms.max}</span>
       </div>
-      <div className="city">
-        city:
-        {city}
-      </div>
-      <div className="email">
-        email:
+      <div className="property-card-city">{city}</div>
+      <div className="property-card-email">
+        <FaMailBulk />
         {email}
       </div>
-      <div className="price">
-        price:
+      <div className="property-card-price">
+        <FaPoundSign />
         {price.max}
       </div>
-      <div className="title">
-        title:
+      <div className="property-card-title">
+        4 bed Flat Manchester
         {title}
       </div>
-      <div className="type">
-        type:
+      <div className="property-card-type">
+        Flat - Manchester
         {type}
       </div>
     </div>

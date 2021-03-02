@@ -1,0 +1,12 @@
+.navlinks{
+    display: flex;
+  justify-items: start;
+  background-color: #ff0000ef;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
+  box-sizing: border-box;
+  margin: 5%;
+  padding: 0%;
+  max-width: 20%;
+
+}
