@@ -1,0 +1,19 @@
+.sidebar {
+    display: flex;
+    flex-direction:column;
+    height: 100%; 
+    width: 160px;
+    padding: 10px;
+    border-right: 1px solid gray; 
+    background-color: #f5f5f5ef;
+    box-shadow: 0 8px 16px rgb(38 38 48 / 20%);   
+}
+
+.side-bar-links{
+    display: flex;
+    justify-items: start;
+    flex-direction:column;
+    padding: 5px;
+    list-style-type: none;   
+}
+

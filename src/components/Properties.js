@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
+import "../styles/PropertyCard.css";
 
 const Properties = () => {
   const [properties, setProperties] = useState([]);

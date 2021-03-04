@@ -8,5 +8,14 @@
   margin: 5%;
   padding: 0%;
   max-width: 20%;
-
+  border: black;
+}
+.Properties {
+  padding: 0.5rem;
+}
+.Properties > .item {
+  display: inline-block;
+  width: 33.33%;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
