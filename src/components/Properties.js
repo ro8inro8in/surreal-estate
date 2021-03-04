@@ -25,7 +25,7 @@ const Properties = () => {
       });
   }, []);
 
-  if (alert.message) {
+  if (!alert.isSuccess) {
     return <Alert message={alert.message} success={alert.isSuccess} />;
   }
   return properties.map((property) => (
