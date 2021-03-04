@@ -4,14 +4,15 @@ import PropTypes from "prop-types";
 import { FaBed, FaBath, FaPoundSign, FaMailBulk } from "react-icons/fa";
 
 const PropertyCard = (props) => {
+  console.log(props);
   const { bathrooms, bedrooms, city, email, price, title, type } = props;
   return (
     <div className="property-card">
       <div className="property-card-bathrooms">
-        <FaBath /> 2<span>{bathrooms.max}</span>
+        <FaBath /> 2<span>{bathrooms}</span>
       </div>
       <div className="property-card-bedrooms">
-        <FaBed /> 2<span>{bedrooms.max}</span>
+        <FaBed /> 2<span>{bedrooms}</span>
       </div>
       <div className="property-card-city">{city}</div>
       <div className="property-card-email">
@@ -20,7 +21,7 @@ const PropertyCard = (props) => {
       </div>
       <div className="property-card-price">
         <FaPoundSign />
-        {price.max}
+        {price}
       </div>
       <div className="property-card-title">
         4 bed Flat Manchester
@@ -37,17 +38,11 @@ const PropertyCard = (props) => {
 export default PropertyCard;
 
 PropertyCard.propTypes = {
-  bathrooms: PropTypes.shape({
-    min: PropTypes.number,
-    max: PropTypes.number,
-  }).isRequired,
-  bedrooms: PropTypes.shape({
-    min: PropTypes.number,
-    max: PropTypes.number,
-  }).isRequired,
+  bathrooms: PropTypes.string.isRequired,
+  bedrooms: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
 };
