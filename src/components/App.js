@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
-import SideBar from "./SideBar";
+// import SideBar from "./SideBar";
 
 import "./Alert";
 
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
-      <SideBar />
+      {/* <SideBar /> */}
       <h1>Welcome to Surreal Estate</h1>
       <div className="navlinks">
         <Switch>

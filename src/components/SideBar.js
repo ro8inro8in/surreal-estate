@@ -1,18 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/SideBar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
+import qs from "qs";
+import { FaSearch } from "react-icons/fa";
 
-const Sidebar = () => {
+const buildQueryString = (operation, valueObj, search) => {
+  const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
+
+  const newQueryParams = {
+    ...currentQueryParams,
+    [operation]: JSON.stringify({
+      ...JSON.parse(currentQueryParams[operation] || "{}"),
+      ...valueObj,
+    }),
+  };
+  return qs.stringify(newQueryParams, { addQueryPrefix: true, encode: false });
+};
+
+const SideBar = () => {
+  const { search } = useLocation();
+  const [query, setQuery] = useState("");
+  const history = useHistory();
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const newQueryString = buildQueryString("query", {
+      title: { $regex: query },
+    });
+    history.push(newQueryString);
+  };
+
   return (
     <div className="sidebar">
       <ul className="side-bar-links">
-        <Link to={`/?query={"city": "Manchester"}`}>Manchester</Link>
-        <Link to={`/?query={"city": "Leeds"}`}>Leeds</Link>
-        <Link to={`/?query={"city": "Sheffield"}`}>Sheffield</Link>
-        <Link to={`/?query={"city": "Liverpool"}`}>Liverpool</Link>
+        <form onSubmit={handleSearch}>
+          <input
+            placeholder="search"
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <button type="submit">
+            <FaSearch />
+          </button>
+        </form>
+        <h3>Filter By City</h3>
+        <Link to={buildQueryString("query", { city: "Manchester" }, search)}>
+          Manchester
+        </Link>
+        <Link to={buildQueryString("query", { city: "Leeds" }, search)}>
+          Leeds
+        </Link>
+        <Link to={buildQueryString("query", { city: "Sheffield" }, search)}>
+          Sheffield
+        </Link>
+        <Link to={buildQueryString("query", { city: "Liverpool" }, search)}>
+          Liverpool
+        </Link>
+        <h3>Sort by</h3>
+        <Link to={buildQueryString("sort", { price: 1 }, search)}>
+          {" "}
+          Price Ascending
+        </Link>
+        <Link to={buildQueryString("sort", { price: -1 }, search)}>
+          {" "}
+          Price Descending
+        </Link>
       </ul>
     </div>
   );
 };
 
-export default Sidebar;
+export default SideBar;
