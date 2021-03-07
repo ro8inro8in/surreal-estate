@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
+import SavedProperties from "./SavedProperties";
 import "./Alert";
 // import FacebookLogin from "./FaceBookLogin";
 
@@ -31,6 +32,9 @@ const App = () => {
           />
           <Route exact path="/AddProperty">
             <AddProperty />
+          </Route>
+          <Route exact path="/SavedProperties">
+            <SavedProperties />
           </Route>
         </Switch>
       </div>

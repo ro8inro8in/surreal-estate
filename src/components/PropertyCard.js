@@ -5,7 +5,19 @@ import { FaBed, FaBath, FaPoundSign, FaMailBulk } from "react-icons/fa";
 
 const PropertyCard = (props) => {
   console.log(props);
-  const { bathrooms, bedrooms, city, email, price, title, type } = props;
+  const {
+    _id,
+    bathrooms,
+    bedrooms,
+    city,
+    email,
+    price,
+    title,
+    type,
+    userID,
+    onSaveProperty,
+    onDeleteProperty,
+  } = props;
   return (
     <div className="property-card">
       <div className="property-container">
@@ -34,11 +46,23 @@ const PropertyCard = (props) => {
           {type}
         </div>
       </div>
+      {userID && (
+        <div className="save-button">
+          <button type="button" onClick={() => onSaveProperty(_id)}>
+            Save
+          </button>
+        </div>
+      )}
+      {userID && (
+        <div className="delete-button">
+          <button type="button" onClick={() => onDeleteProperty(_id)}>
+            Delete
+          </button>
+        </div>
+      )}
     </div>
   );
 };
-
-export default PropertyCard;
 
 PropertyCard.propTypes = {
   bathrooms: PropTypes.string.isRequired,
@@ -48,4 +72,10 @@ PropertyCard.propTypes = {
   price: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  userID: PropTypes.string.isRequired,
+  onSaveProperty: PropTypes.func.isRequired,
+  _id: PropTypes.string.isRequired,
+  onDeleteProperty: PropTypes.func.isRequired,
 };
+
+export default PropertyCard;
