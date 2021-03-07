@@ -30,8 +30,8 @@ const SideBar = () => {
   };
 
   return (
-    <div className="sidebar">
-      <ul className="side-bar-links">
+    <div className="sidebar-container">
+      <div className="search-input">
         <form onSubmit={handleSearch}>
           <input
             placeholder="search"
@@ -43,29 +43,46 @@ const SideBar = () => {
             <FaSearch />
           </button>
         </form>
-        <h3>Filter By City</h3>
-        <Link to={buildQueryString("query", { city: "Manchester" }, search)}>
-          Manchester
-        </Link>
-        <Link to={buildQueryString("query", { city: "Leeds" }, search)}>
-          Leeds
-        </Link>
-        <Link to={buildQueryString("query", { city: "Sheffield" }, search)}>
-          Sheffield
-        </Link>
-        <Link to={buildQueryString("query", { city: "Liverpool" }, search)}>
-          Liverpool
-        </Link>
-        <h3>Sort by</h3>
-        <Link to={buildQueryString("sort", { price: 1 }, search)}>
-          {" "}
-          Price Ascending
-        </Link>
-        <Link to={buildQueryString("sort", { price: -1 }, search)}>
-          {" "}
-          Price Descending
-        </Link>
-      </ul>
+      </div>
+      <h3>Filter By City</h3>
+      <Link
+        className="Manchester"
+        to={buildQueryString("query", { city: "Manchester" }, search)}
+      >
+        {" "}
+        Manchester
+      </Link>
+      <Link
+        className="Leeds"
+        to={buildQueryString("query", { city: "Leeds" }, search)}
+      >
+        {" "}
+        Leeds
+      </Link>
+      <Link
+        className="Sheffield"
+        to={buildQueryString("query", { city: "Sheffield" }, search)}
+      >
+        {" "}
+        Sheffield
+      </Link>
+      <Link
+        className="Sheffield"
+        to={buildQueryString("query", { city: "Liverpool" }, search)}
+      >
+        {" "}
+        Liverpool
+      </Link>
+      <h3>Sort by</h3>
+      <Link to={buildQueryString("sort", { price: 1 }, search)}>
+        {" "}
+        Price Ascending
+      </Link>
+      <Link to={buildQueryString("sort", { price: -1 }, search)}>
+        {" "}
+        Price Descending
+      </Link>
+      {/* </ul> */}
     </div>
   );
 };

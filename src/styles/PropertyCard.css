@@ -1,21 +1,8 @@
-.properties {
-    display: flex;
-  justify-items: start;
-  background-color: #ff0000ef;
-  border-radius: 12px;
+.property-card {
+  background-color: rgba(255, 254, 254, 0.468);
+  border: 1px solid rgba(244, 206, 247, 0.434);
   box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
-  box-sizing: border-box;
-  margin: 5%;
-  padding: 0%;
-  max-width: 20%;
-  border: black;
-}
-.Properties {
-  padding: 0.5rem;
-}
-.Properties > .item {
-  display: inline-block;
-  width: 33.33%;
-  padding: 0.5rem;
-  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+
 }

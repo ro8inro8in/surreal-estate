@@ -1,18 +1,20 @@
+h1 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  font-size: 50px;
+} 
 .property {
   display: flex;
-  justify-items: start;
-  background-color: #f5f5f5ef;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
-  box-sizing: border-box;
-  margin: 5%;
-  padding: 0%;
-  max-width: 20%;
+  justify-items: center;
 }
 .addproperty {
-  display: inline-block;
+  background-color: rgb(242, 224, 255);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
   margin: 0;
-  padding: 10%;
+  padding: 2;
   padding-left: 15px;
   padding-right: 10px;
   font-size: 9px;
@@ -23,31 +25,26 @@
   flex-direction: column;
   justify-items: start;
 }
-.addproperty h2 {
-  display: flex;
-  flex-direction: column;
-  justify-items: start;
-  font-size: 20px;
+.form-container{
+  margin: 0 auto;
+  
 }
-.addproperty label {
-  display: flex;
-  justify-items: start;
-  padding: 5%;
-  margin: 0;
-}
-.addproperty button {
+button{
   display: flex;
   justify-content: center;
-  padding: 5%;
-  margin: 5%;
+ 
+  padding: 1%;
+  margin-top: 10px;
+ 
   background-color: rgba(131, 0, 131, 0.753);
   color: white;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
-  box-sizing: border-box;
+  
 }
 
-@media only screen and (max-width: 1000px) {
+
+/* @media only screen and (max-width: 1000px) {
   .navlinks {
     max-width: 25%;
   }
@@ -61,4 +58,4 @@
   .navlinks {
     max-width: 60%;
   }
-}
+} */

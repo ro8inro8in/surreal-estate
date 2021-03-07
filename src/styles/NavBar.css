@@ -1,36 +1,26 @@
-.navbar img {
+img {
   height: 45px;
 }
 .navbar {
   background-color: white;
   border-bottom: 1px solid gray;
   display: flex;
-  
 }
 .navbar-links {
   margin: 0;
   padding: 0;
 }
-.navbar-links-item {
-  padding: 13px;
-  list-style-type: none;
-  text-align: center;
-}
+
 .navbar-links-item li {
   display: inline-block;
   margin: 0;
+  padding: 13px;
   padding-left: 15px;
   padding-right: 10px;
   font-size: 12px;
   list-style-type: none;
-}
-/* .hero-back-img { 
-  height: 50%;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-} */
+} 
+
 @media only screen and (max-width: 750px) {
   
 }

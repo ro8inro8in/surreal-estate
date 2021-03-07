@@ -8,28 +8,31 @@ const PropertyCard = (props) => {
   const { bathrooms, bedrooms, city, email, price, title, type } = props;
   return (
     <div className="property-card">
-      <div className="property-card-bathrooms">
-        <FaBath /> 2<span>{bathrooms}</span>
-      </div>
-      <div className="property-card-bedrooms">
-        <FaBed /> 2<span>{bedrooms}</span>
-      </div>
-      <div className="property-card-city">{city}</div>
-      <div className="property-card-email">
-        <FaMailBulk />
-        {email}
-      </div>
-      <div className="property-card-price">
-        <FaPoundSign />
-        {price}
-      </div>
-      <div className="property-card-title">
-        4 bed Flat Manchester
-        {title}
-      </div>
-      <div className="property-card-type">
-        Flat - Manchester
-        {type}
+      <div className="property-container">
+        <img src="/images/StockSnap_WCDXCVV2ZX.jpg" alt="navbar-logo" />
+        <div className="property-card-bathrooms">
+          <FaBath /> 2<span>{bathrooms}</span>
+        </div>
+        <div className="property-card-bedrooms">
+          <FaBed /> 2<span>{bedrooms}</span>
+        </div>
+        <div className="property-card-city">{city}</div>
+        <div className="property-card-email">
+          <FaMailBulk />
+          {email}
+        </div>
+        <div className="property-card-price">
+          <FaPoundSign />
+          {price}
+        </div>
+        <div className="property-card-title">
+          4 bed Flat Manchester
+          {title}
+        </div>
+        <div className="property-card-type">
+          Flat - Manchester
+          {type}
+        </div>
       </div>
     </div>
   );
