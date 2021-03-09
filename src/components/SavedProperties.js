@@ -5,6 +5,7 @@ import Alert from "./Alert";
 
 const SavedProperties = (userID) => {
   const [savedProperties, setSavedProperties] = useState();
+  console.log(setSavedProperties);
   const [alert, setAlert] = useState({ message: "" });
 
   useEffect(() => {

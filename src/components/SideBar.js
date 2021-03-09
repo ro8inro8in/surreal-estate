@@ -39,46 +39,52 @@ const SideBar = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <button type="submit">
+          <button className="s-btn" type="submit">
             <FaSearch />
           </button>
         </form>
       </div>
       <h3>Filter By City</h3>
       <Link
-        className="Manchester"
+        className="filter-links"
         to={buildQueryString("query", { city: "Manchester" }, search)}
       >
         {" "}
         Manchester
       </Link>
       <Link
-        className="Leeds"
+        className="filter-links"
         to={buildQueryString("query", { city: "Leeds" }, search)}
       >
         {" "}
         Leeds
       </Link>
       <Link
-        className="Sheffield"
+        className="filter-links"
         to={buildQueryString("query", { city: "Sheffield" }, search)}
       >
         {" "}
         Sheffield
       </Link>
       <Link
-        className="Sheffield"
+        className="filter-links"
         to={buildQueryString("query", { city: "Liverpool" }, search)}
       >
         {" "}
         Liverpool
       </Link>
       <h3>Sort by</h3>
-      <Link to={buildQueryString("sort", { price: 1 }, search)}>
+      <Link
+        className="filter-links"
+        to={buildQueryString("sort", { price: 1 }, search)}
+      >
         {" "}
         Price Ascending
       </Link>
-      <Link to={buildQueryString("sort", { price: -1 }, search)}>
+      <Link
+        className="filter-links"
+        to={buildQueryString("sort", { price: -1 }, search)}
+      >
         {" "}
         Price Descending
       </Link>

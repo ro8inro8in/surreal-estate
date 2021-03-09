@@ -6,7 +6,6 @@ import Properties from "./Properties";
 import AddProperty from "./AddProperty";
 import SavedProperties from "./SavedProperties";
 import "./Alert";
-// import FacebookLogin from "./FaceBookLogin";
 
 const App = () => {
   const [userId, setUserId] = useState("");

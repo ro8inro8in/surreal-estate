@@ -1,8 +1,28 @@
 .property-card {
-  background-color: rgba(255, 254, 254, 0.468);
-  border: 1px solid rgba(244, 206, 247, 0.434);
+  margin-top: 5%;
+  margin-bottom: -5%;
+  background-color: rgb(255, 254, 254);
   box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
-  padding: 20px;
+  padding: 10px;
   text-align: center;
+  border-radius: 8px;
 
+}
+.card-btn{
+  width: 135px;
+  height:25px;  
+  margin: 20px;
+  border-radius: 4px;
+  background: #b462b8;
+  color:white;
+  border:0px transparent;  
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
+}
+.card-btn:hover {
+  background-color: rgba(189, 23, 235, 0.782);
+ border-radius: 4px;
+ transition: all 0.2s ease out;
 }
