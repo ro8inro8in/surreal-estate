@@ -1,32 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/PropertyCard.css";
 import PropTypes from "prop-types";
 import { FaBed, FaBath, FaPoundSign, FaMailBulk } from "react-icons/fa";
 
 const PropertyCard = (props) => {
-  console.log(props);
   const {
-    _id,
+    title,
+    propertyId,
+    city,
+    type,
     bathrooms,
     bedrooms,
-    city,
-    email,
     price,
-    title,
-    type,
+    email,
     userID,
     onSaveProperty,
     onDeleteProperty,
+    myProperties,
+    favouriteId,
   } = props;
+
+  const [showDelete, setShowDelete] = useState(false);
+
+  useEffect(() => {
+    if (myProperties && userID) {
+      setShowDelete(true);
+    }
+  }, [myProperties]);
+
   return (
     <div className="property-card">
       <div className="property-container">
-        {/* <img src="/images/StockSnap_WCDXCVV2ZX.jpg" alt="navbar-logo" /> */}
         <div className="property-card-title">{title}</div>
-        <div className="property-card-type">
-          Flat - Manchester
-          {type}
-        </div>
+        <div className="property-card-type">{type}</div>
         <div className="property-card-city">{city}</div>
         <div className="property-card-bathrooms">
           <FaBath /> 2<span>{bathrooms}</span>
@@ -34,7 +40,6 @@ const PropertyCard = (props) => {
         <div className="property-card-bedrooms">
           <FaBed /> 2<span>{bedrooms}</span>
         </div>
-
         <div className="property-card-price">
           <FaPoundSign />
           {price}
@@ -45,40 +50,47 @@ const PropertyCard = (props) => {
           {email}
         </div>
       </div>
-      {userID && (
+      {userID && !showDelete && (
         <button
           className="card-btn"
           type="button"
-          onClick={() => onSaveProperty(_id)}
+          onClick={() => onSaveProperty(propertyId)}
         >
           Save
         </button>
       )}
-      {userID && (
-        <button
-          className="card-btn"
-          type="button"
-          onClick={() => onDeleteProperty(_id)}
-        >
-          Delete
-        </button>
-      )}
+      {showDelete &&
+        myProperties.filter((e) => propertyId === e.propertyListing._id) && (
+          <button
+            className="card-btn"
+            type="button"
+            onClick={() => onDeleteProperty(favouriteId)}
+          >
+            Delete
+          </button>
+        )}
     </div>
   );
 };
 
+PropertyCard.defaultProps = {
+  myProperties: undefined,
+};
+
 PropertyCard.propTypes = {
-  bathrooms: PropTypes.string.isRequired,
-  bedrooms: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  bedrooms: PropTypes.number.isRequired,
+  bathrooms: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  city: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
   userID: PropTypes.string.isRequired,
   onSaveProperty: PropTypes.func.isRequired,
-  _id: PropTypes.string.isRequired,
   onDeleteProperty: PropTypes.func.isRequired,
+  propertyId: PropTypes.string.isRequired,
+  myProperties: PropTypes.arrayOf(PropTypes.any),
+  favouriteId: PropTypes.string.isRequired,
 };
 
 export default PropertyCard;

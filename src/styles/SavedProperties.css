@@ -1,0 +1,19 @@
+.saved-properties-page {
+    display: grid;
+    width: 100%;
+    grid-template-columns:15% 85%;
+    grid-template-rows: 60vh;
+}
+.sidebar{
+    width: 100%;
+    grid-column: 1;
+}
+.saved-properties {
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

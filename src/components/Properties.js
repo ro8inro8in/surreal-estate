@@ -1,30 +1,25 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 import axios from "axios";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
 import SideBar from "./SideBar";
 import "../styles/Properties.css";
 
-const Properties = (userID) => {
+const Properties = ({ userID }) => {
   const [properties, setProperties] = useState([]);
-  console.log(properties);
-  const [alert, setAlert] = useState({ message: "" });
+  const [alert, setAlert] = useState({ message: "", isSuccess: true });
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/PropertyListing`)
-      .then(({ data }) => {
-        setProperties(data);
-        setAlert({
-          message: "Property Added",
-          isSuccess: true,
-        });
+      .get("http://localhost:4000/api/v1/PropertyListing")
+      .then((results) => {
+        setProperties(results.data);
       })
       .catch(() => {
         setAlert({
-          message: "Server error. Please try again later.",
+          message: "Server error. Please try again later",
           isSuccess: false,
         });
       });
@@ -34,7 +29,7 @@ const Properties = (userID) => {
   useEffect(() => {
     axios
       .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
-      .then(({ data }) => setProperties(data))
+      .then((results) => setProperties(results.data))
       .catch(() => {
         setAlert({
           message: "Server error. Please try again later.",
@@ -43,7 +38,7 @@ const Properties = (userID) => {
       });
   }, [search]);
 
-  if (!alert.isSuccess) {
+  if (alert.message) {
     return <Alert message={alert.message} success={alert.isSuccess} />;
   }
   const handleSaveProperty = (propertyId) => {
@@ -58,20 +53,30 @@ const Properties = (userID) => {
         <SideBar />
       </div>
       <div className="propertyCards">
-        {properties.map((property) => (
-          <PropertyCard
-            key={property._id}
-            {...property}
-            userID={userID}
-            onSaveProperty={handleSaveProperty}
-          />
-        ))}
+        {properties &&
+          properties.map((property) => {
+            return (
+              <PropertyCard
+                userID={userID}
+                key={property._id}
+                title={property.title}
+                city={property.city}
+                type={property.type}
+                bathrooms={property.bathrooms}
+                bedrooms={property.bedrooms}
+                price={property.price}
+                email={property.email}
+                onSaveProperty={handleSaveProperty}
+                propertyId={property._id}
+              />
+            );
+          })}
       </div>
     </section>
   );
 };
 
-PropertyCard.propTypes = {
+Properties.propTypes = {
   userID: PropTypes.number.isRequired,
 };
 

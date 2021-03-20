@@ -28,9 +28,7 @@ const AddProperty = () => {
     setAlert({ message: "", isSuccess: false });
     axios
       .post(`http://localhost:4000/api/v1/PropertyListing`, fields)
-      .then((response) => {
-        console.log(response);
-        console.log(response.data);
+      .then(() => {
         setAlert({
           message: "Property Added",
           isSuccess: true,
@@ -47,7 +45,7 @@ const AddProperty = () => {
   const handleFieldChange = (event) => {
     setFields({ ...fields, [event.target.name]: event.target.value });
   };
-
+  console.log(fields.bedroom);
   return (
     <div className="addproperty">
       <h1>Welcome to Surreal Estate</h1>
@@ -118,11 +116,11 @@ const AddProperty = () => {
             </label>
           </div>
           <div className="form-elements">
-            <label htmlFor="bathroom">
+            <label htmlFor="bedrooms">
               <select
                 placeholder="Number of bedrooms"
                 id="bedrooms"
-                name="bedrooms"
+                name="bedroom"
                 value={fields.bedroom}
                 onChange={handleFieldChange}
               >
