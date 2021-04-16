@@ -39,10 +39,10 @@ const SavedProperties = ({ userID, myProperties, setMyProperties }) => {
       <div className="saved-properties">
         {myProperties &&
           myProperties.map((property) => {
-            console.log(property);
+            
             return (
               <PropertyCard
-                favouriteId={property.propertyListing._id}
+                favouriteId={property._id}
                 userID={userID}
                 key={property.propertyListing._id}
                 title={property.propertyListing.title}
