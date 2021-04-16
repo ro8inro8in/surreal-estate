@@ -39,7 +39,6 @@ const SavedProperties = ({ userID, myProperties, setMyProperties }) => {
       <div className="saved-properties">
         {myProperties &&
           myProperties.map((property) => {
-            
             return (
               <PropertyCard
                 favouriteId={property._id}
