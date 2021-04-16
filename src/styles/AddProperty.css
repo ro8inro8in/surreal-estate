@@ -1,4 +1,3 @@
-
 h1 {
   color: rgb(66, 62, 62);
   display: flex;
@@ -10,9 +9,9 @@ h1 {
 
 h2 {
   color: rgb(66, 62, 62);
-  display: flex;
+  display: flex-start;
   justify-content: center;
-  margin-top: 20pxpx;
+  margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
   font-size: 25px;
@@ -88,6 +87,6 @@ input {
   width: 100%;
 }
 
-@media only screen and (max-width: 600px){
+/* @media only screen and (max-width: 600px){
   
-}
+} */

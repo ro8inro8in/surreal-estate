@@ -67,7 +67,7 @@ SavedProperties.defaultProps = {
 };
 
 SavedProperties.propTypes = {
-  userID: PropTypes.number.isRequired,
+  userID: PropTypes.string.isRequired,
   myProperties: PropTypes.arrayOf(PropTypes.any),
   setMyProperties: PropTypes.func.isRequired,
 };
