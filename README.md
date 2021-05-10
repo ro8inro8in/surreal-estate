@@ -1,5 +1,4 @@
-# Project Name
-Surreal Estate - Project Overview
+# Surreal Estate - Project Overview
 
 ## 
 A mock property website, built using React. Users can view properties for sale, sort, search and filter property results. Users can also login (using Facebook login API) and save properties to favourites.
